@@ -1,3 +1,7 @@
+###################
+#  [Two missing]  #
+###################
+
 # For the exercise, look up the methods and functions that are available for use
 # with Python lists.
 
