@@ -8,12 +8,12 @@ Write a program that accepts user input of the form
 and does the following:
  - If the user doesn't specify any input, your program should
    print the calendar for the current month. The 'datetime'
-   module may be helpful for this.
+   module may be helpful for this. X
  - If the user specifies one argument, assume they passed in a
-   month and render the calendar for that month of the current year.
+   month and render the calendar for that month of the current year. X
  - If the user specifies two arguments, assume they passed in
    both the month and the year. Render the calendar for that
-   month and year.
+   month and year. X
  - Otherwise, print a usage statement to the terminal indicating
    the format that your program expects arguments to be given.
    Then exit the program.
@@ -22,3 +22,24 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+# userMonth = input('Enter a month: ')
+# userYear = input('Enter a year: ')
+# for arg in sys.argv:
+
+# if userMonth == '':
+#   print(calendar.month(datetime.now().year, datetime.now().month))
+# elif userMonth != '' and userYear == '':
+  # print(calendar.month(datetime.now().year, int(userMonth)))
+# elif userMonth != '' and userYear == '':
+  # print(calendar.month(int(userYear), int(userYear)))
+
+if len(sys.argv) == 1:
+  print(calendar.month(datetime.now().year, datetime.now().month))
+  # print(calendar.month(datetime.now().month))
+elif len(sys.argv) == 2:
+  print(calendar.month(datetime.now().year, int(sys.argv[1])))
+elif len(sys.argv) == 3:
+  print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
+else:
+  print('14_cal.py month [year]')
